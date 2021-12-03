@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/yemekList">
+
+    <fragment
+        android:id="@+id/yemekList"
+        android:name="com.example.yemeklistesi.YemekList"
+        android:label="fragment_yemek_list"
+        tools:layout="@layout/fragment_yemek_list" >
+        <action
+            android:id="@+id/action_yemekList_to_yemekTarif"
+            app:destination="@id/yemekTarif" />
+    </fragment>
+    <fragment
+        android:id="@+id/yemekTarif"
+        android:name="com.example.yemeklistesi.YemekTarif"
+        android:label="fragment_yemek_tarif"
+        tools:layout="@layout/fragment_yemek_tarif" >
+        <action
+            android:id="@+id/action_yemekTarif_to_yemekList"
+            app:destination="@id/yemekList" />
+        <argument
+            android:name="bilgi"
+            app:argType="string"
+            android:defaultValue="menudengeldim" />
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>
